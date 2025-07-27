@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - ArrMaz Products Inc.</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- AOS (Animate On Scroll) Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #38bdf8;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #38bdf8;
+        }
+
+        .nav-link.active::after, .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .page-header {
+            background-image: linear-gradient(to right bottom, rgba(10, 10, 10, 0.85), rgba(15, 23, 42, 0.85)), url('images/4.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        /* Timeline Styles */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #1e293b; /* Slate-800 */
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-container.left {
+            left: 0;
+        }
+
+        .timeline-container.right {
+            left: 50%;
+        }
+
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: white;
+            border: 4px solid #0ea5e9; /* Sky-500 */
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .right::after {
+            left: -16px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: #1e293b;
+            position: relative;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            .timeline-container.left, .timeline-container.right {
+                left: 0%;
+            }
+            .timeline-container::after {
+                left: 15px;
+            }
+            .right::after {
+                left: 15px;
+            }
+        }
+        
+        .value-card {
+            background-color: #1e293b;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .value-card:hover {
+            transform: translateY(-10px);
+            background-color: #334155;
+        }
+
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-slate-900/80 backdrop-blur-sm shadow-lg" id="header">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-white tracking-wider">ArrMaz</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link active">About Us</a>
+                
+                <a href="industries.html" class="nav-link">Industries</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <button class="md:hidden text-white" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-slate-900/95 backdrop-blur-sm z-40">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="index.html" class="text-2xl text-gray-300 hover:text-white">Home</a>
+            <a href="about.html" class="text-2xl text-white font-medium">About Us</a>
+            
+            <a href="industries.html" class="text-2xl text-gray-300 hover:text-white">Industries</a>
+            <a href="contact.html" class="text-2xl text-gray-300 hover:text-white">Contact</a>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header pt-40 pb-20 text-center">
+        <div class="container mx-auto px-6">
+            <h1 class="text-5xl font-bold text-white" data-aos="fade-up">About ArrMaz</h1>
+            <p class="text-xl text-sky-300 mt-4" data-aos="fade-up" data-aos-delay="100">Innovating with chemistry, partnering for success.</p>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="py-20 bg-slate-900">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <img src="images/5.jpg" alt="ArrMaz Laboratory" class="rounded-xl shadow-2xl w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/ffffff?text=Image+Not+Found';">
+                </div>
+                <div data-aos="fade-left">
+                    <h2 class="text-3xl font-bold text-white mb-4">Our Journey of Innovation</h2>
+                    <p class="text-gray-400 mb-4">For over 50 years, ArrMaz has been a trusted partner to the world’s leading companies. Founded on the principle of customer-centric innovation, we began by developing specialty surfactants for the Florida phosphate industry. Our success was built on a simple promise: to understand our customers' challenges and engineer chemical solutions that deliver tangible value.</p>
+                    <p class="text-gray-400">Today, our reach is global, but our core mission remains the same. We continue to push the boundaries of chemistry to enhance process efficiency, improve product quality, and promote sustainability across the mining, fertilizer, and infrastructure markets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="py-20 bg-gray-900/50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-white text-center mb-16" data-aos="fade-up">Our Milestones</h2>
+            <div class="timeline">
+                <div class="timeline-container left" data-aos="fade-right">
+                    <div class="timeline-content">
+                        <h3 class="text-xl font-bold text-sky-400">1967</h3>
+                        <p class="text-gray-300 mt-2">ArrMaz is founded as a custom chemical provider for the Florida phosphate industry.</p>
+                    </div>
+                </div>
+                <div class="timeline-container right" data-aos="fade-left">
+                    <div class="timeline-content">
+                        <h3 class="text-xl font-bold text-sky-400">1990s</h3>
+                        <p class="text-gray-300 mt-2">Expanded internationally, establishing a strong presence in South America's mining sector.</p>
+                    </div>
+                </div>
+                <div class="timeline-container left" data-aos="fade-right">
+                    <div class="timeline-content">
+                        <h3 class="text-xl font-bold text-sky-400">2005</h3>
+                        <p class="text-gray-300 mt-2">Opened a state-of-the-art research and development center in Mulberry, Florida.</p>
+                    </div>
+                </div>
+                 <div class="timeline-container right" data-aos="fade-left">
+                    <div class="timeline-content">
+                        <h3 class="text-xl font-bold text-sky-400">2018</h3>
+                        <p class="text-gray-300 mt-2">Launched a new line of eco-friendly coating technologies for the asphalt industry.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section class="py-20 bg-slate-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-white text-center mb-16" data-aos="fade-up">Our Core Values</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="value-card text-center p-8 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-lightbulb text-5xl text-sky-400 mb-4"></i>
+                    <h3 class="text-2xl font-bold text-white mb-2">Innovation</h3>
+                    <p class="text-gray-400">We thrive on solving the toughest challenges with creative and effective chemical solutions.</p>
+                </div>
+                <div class="value-card text-center p-8 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-handshake text-5xl text-green-400 mb-4"></i>
+                    <h3 class="text-2xl font-bold text-white mb-2">Partnership</h3>
+                    <p class="text-gray-400">We build lasting relationships based on trust, collaboration, and a deep understanding of our customers' needs.</p>
+                </div>
+                <div class="value-card text-center p-8 rounded-lg" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-shield-alt text-5xl text-blue-400 mb-4"></i>
+                    <h3 class="text-2xl font-bold text-white mb-2">Integrity</h3>
+                    <p class="text-gray-400">We conduct our business with the highest ethical standards, ensuring safety and responsibility in all we do.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/50 border-t border-gray-800">
+        <div class="container mx-auto px-6 py-8">
+            <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-2">ArrMaz</h3>
+                    <p class="text-gray-400">Pioneering Chemical Solutions.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-3">Contact Us</h4>
+                    <p class="text-gray-400"><i class="fas fa-map-marker-alt mr-2"></i>4800 State Rd 60 East, Mulberry, FL 33860</p>
+                    <p class="text-gray-400 mt-2"><i class="fas fa-phone mr-2"></i>(863) 578-1206</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-3">Follow Us</h4>
+                    <div class="flex space-x-4 justify-center md:justify-start">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500">
+                <p>&copy; <span id="year"></span> ArrMaz Products Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS (Animate On Scroll) Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if(mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>

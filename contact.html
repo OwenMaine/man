@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ArrMaz Products Inc.</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- AOS (Animate On Scroll) Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #38bdf8;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #38bdf8;
+        }
+
+        .nav-link.active::after, .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .page-header {
+            background-image: linear-gradient(to right bottom, rgba(10, 10, 10, 0.85), rgba(15, 23, 42, 0.85)), url('images/10.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .form-input {
+            background-color: #1e293b; /* slate-800 */
+            border: 2px solid #334155; /* slate-700 */
+            color: #e0e0e0;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #0ea5e9; /* sky-500 */
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.3);
+        }
+
+        .btn-primary {
+            background-color: #0ea5e9;
+            color: #ffffff;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0284c7;
+            transform: translateY(-2px);
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-info-item:hover {
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            background-color: #1e293b;
+            color: #0ea5e9;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-right: 1rem;
+        }
+
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-slate-900/80 backdrop-blur-sm shadow-lg" id="header">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-white tracking-wider">ArrMaz</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                
+                <a href="industries.html" class="nav-link">Industries</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </div>
+            <button class="md:hidden text-white" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-slate-900/95 backdrop-blur-sm z-40">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="index.html" class="text-2xl text-gray-300 hover:text-white">Home</a>
+            <a href="about.html" class="text-2xl text-gray-300 hover:text-white">About Us</a>
+          
+            <a href="industries.html" class="text-2xl text-gray-300 hover:text-white">Industries</a>
+            <a href="contact.html" class="text-2xl text-white font-medium">Contact</a>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header pt-40 pb-20 text-center">
+        <div class="container mx-auto px-6">
+            <h1 class="text-5xl font-bold text-white" data-aos="fade-up">Get In Touch</h1>
+            <p class="text-xl text-sky-300 mt-4" data-aos="fade-up" data-aos-delay="100">We're here to help and answer any question you might have.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 bg-slate-900">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12">
+                
+                <!-- Left: Contact Info -->
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl font-bold text-white mb-6">Contact Information</h2>
+                    <p class="text-gray-400 mb-8">Feel free to reach out to us through any of the following methods. Our team is ready to assist you with your inquiries.</p>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-white">Our Address</h4>
+                            <p class="text-gray-400">4800 State Rd 60 East, Mulberry, FL 33860</p>
+                        </div>
+                    </div>
+
+                     <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-white">Phone</h4>
+                            <p class="text-gray-400">(863) 578-1206</p>
+                        </div>
+                    </div>
+
+                     <div class="contact-info-item">
+                        <div class="contact-icon">
+                           <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-white">General Inquiries</h4>
+                            <p class="text-gray-400">info@arrmaz.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Contact Form -->
+                <div data-aos="fade-left" data-aos-delay="150">
+                    <div class="bg-slate-800 p-8 rounded-lg shadow-lg">
+                        <h2 class="text-3xl font-bold text-white mb-6">Send Us a Message</h2>
+                        <form action="#" method="POST">
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-300 mb-2">Full Name</label>
+                                <input type="text" id="name" name="name" class="w-full form-input" required>
+                            </div>
+                             <div class="mb-4">
+                                <label for="email" class="block text-gray-300 mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" class="w-full form-input" required>
+                            </div>
+                             <div class="mb-4">
+                                <label for="subject" class="block text-gray-300 mb-2">Subject</label>
+                                <input type="text" id="subject" name="subject" class="w-full form-input" required>
+                            </div>
+                             <div class="mb-6">
+                                <label for="message" class="block text-gray-300 mb-2">Message</label>
+                                <textarea id="message" name="message" rows="5" class="w-full form-input" required></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn-primary font-bold py-3 px-8 rounded-lg w-full">Submit Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/50 border-t border-gray-800">
+        <div class="container mx-auto px-6 py-8">
+            <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-2">ArrMaz</h3>
+                    <p class="text-gray-400">Pioneering Chemical Solutions.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-3">Contact Us</h4>
+                    <p class="text-gray-400"><i class="fas fa-map-marker-alt mr-2"></i>4800 State Rd 60 East, Mulberry, FL 33860</p>
+                    <p class="text-gray-400 mt-2"><i class="fas fa-phone mr-2"></i>(863) 578-1206</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-3">Follow Us</h4>
+                    <div class="flex space-x-4 justify-center md:justify-start">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500">
+                <p>&copy; <span id="year"></span> ArrMaz Products Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS (Animate On Scroll) Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if(mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
